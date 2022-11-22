@@ -7,6 +7,8 @@
 
 The Amateur Encryption Protocol is developed by the owner of this repository. This description document and the specific content of the protocol are based on the owner's native language `zh-hans-CN`. Some errors may occur when translating to other written words and languages, whichever is `zh hans-CN`.
 
+由于业余无线电通信有`除业余卫星遥控以外，不得以任何形式对信息进行加密`的要求，所以本协议的“加密”实际上是`发送方使用私钥对信息进行加密，接收方使用发送方的公钥对信息进行解密`。这样就可以实现身份认证，而不违反有关规定。
+
 # v1.0
 此协议有`AEPb` `AEPm` `AEPc`三个通信子协议，分别对应`基本` `信息` `证书`；还有`AEPC`和`ACSR`两个证书子协议，分别是数字证书和证书请求。
 ## AEPb
