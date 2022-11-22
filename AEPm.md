@@ -3,7 +3,8 @@
 
 This subprotocol contains information and signatures and is the primary data transmission in communication.
 
-## 内容规定
+## v1.0
+### 内容规定
 | 字节序号 | 位数 | 名称 | 类型 | 描述 |
 |:-------:|:----:|:---:|:----:|:----:|
 | 0x0000 | 16  | 协议头 | 数字 |0x456D Em|
