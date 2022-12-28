@@ -6,7 +6,9 @@ This sub-protocol contains both digital certificates and information and is the 
 采用`TLV`格式描述
 
 ## v1.0
-### 内容规定 (如无特殊说明，数字默认16进制)
+### 内容规定
+(如无特殊说明，数字默认16进制)
+
 | 名称 | T | L | V | 说明 |
 |:-------:|:----:|:---:|:----:|:----:|
 | 协议头 | F101  | 02 | 0x4562 Eb|  |
