@@ -17,7 +17,7 @@ The Amateur Encryption Protocol is developed by the owner of this repository. Th
 为防止版本更改过勤，版本分为大版本和小版本两部分，如`v1.0`即第一大版本的初始版本。在应用中只需传输大版本号即可。小版本主要是针对协议规范、标准的增添、删除和修订，对同一大版本兼容，基本不涉及协议的具体定义。
 
 ## AEPb
-`AEPb`子协议全称`业余加密协议——基本子协议`，基本对应Basic。此子协议同时包含数字证书和信息，是其他子协议的初始。在应用中，可组合使用其他子协议而不使用此子协议，但是仍然应当对此子协议提供完全支持。
+`AEPb`子协议全称`业余加密协议——基本子协议`，基本对应Basic。此子协议同时包含数字证书和信息，是最基本的子协议。在应用中，可组合使用其他子协议而不使用此子协议，但是仍然应当对此子协议提供完全支持。
 
 `AEPb`的详细描述文档见`minexixi/AEP/AEPb.md`
 
@@ -25,7 +25,12 @@ The Amateur Encryption Protocol is developed by the owner of this repository. Th
 ## AEPm
 `AEPm`子协议全称`业余加密协议——信息子协议`，信息对应Message。此子协议包含信息和签名，是通信中主要传输的数据。
 
-`AEPb`的详细描述文档见`minexixi/AEP/AEPm.md`
+`AEPm`的详细描述文档见`minexixi/AEP/AEPm.md`
 
-`AEPb` https://github.com/minexixi/AEP/blob/73a5343da97e44512bc51dd97b3ecdc565dcc3c7/AEPm.md
+`AEPm` https://github.com/minexixi/AEP/blob/73a5343da97e44512bc51dd97b3ecdc565dcc3c7/AEPm.md
 ## AEPc
+`AEPc`子协议全称`业余加密协议——证书子协议`，证书对应Certificate。此子协议专门用于传递数字证书。
+
+`AEPc`的详细描述文档见`minexixi/AEP/AEPc.md`
+
+`AEPc` https://github.com/minexixi/AEP/blob/73a5343da97e44512bc51dd97b3ecdc565dcc3c7/AEPc.md
