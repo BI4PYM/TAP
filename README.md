@@ -10,30 +10,13 @@ The Amateur Encryption Protocol is developed by the owner of this repository. Th
 由于业余无线电通信有`除业余卫星遥控以外，不得以任何形式对信息进行加密`的要求，所以本协议的“加密”实际上是`发送方使用私钥对信息进行加密，接收方使用发送方的公钥对信息进行解密`。这样就可以实现身份认证，而不违反有关规定。
 
 # v1.0
-此协议有`AEPb` `AEPm` `AEPc` `AEPp`四个通信子协议，分别对应`基本` `信息` `证书` `封包`；还有`AEPC`和`ACSR`两个证书子协议，分别是数字证书和证书请求。
+此协议有`AEPp` `AEPC`和`ACSR`两个证书子协议，分别是封包、数字证书和证书请求。
 
 为保证用户使用`AEP`协议时的安全性和通用性，在此规定有关`AEP`的各种标准，作为应用规范，以避免因标准不一造成的冲突。
 
 为防止版本更改过勤，版本分为大版本和小版本两部分，如`v1.0`即第一大版本的初始版本。在应用中只需传输大版本号即可。小版本主要是针对协议规范、标准的增添、删除和修订，对同一大版本兼容，基本不涉及协议的具体定义。
 
-## AEPb
-`AEPb`子协议全称`业余加密协议——基本子协议`，基本对应Basic。此子协议同时包含数字证书和信息，是最基本的子协议。在应用中，可组合使用其他子协议而不使用此子协议，但是仍然应当对此子协议提供完全支持。
 
-`AEPb`的详细描述文档见`minexixi/AEP/AEPb.md`
-
-`AEPb` https://github.com/minexixi/AEP/blob/73a5343da97e44512bc51dd97b3ecdc565dcc3c7/AEPb.md
-## AEPm
-`AEPm`子协议全称`业余加密协议——信息子协议`，信息对应Message。此子协议包含信息和签名，是通信中主要传输的数据。
-
-`AEPm`的详细描述文档见`minexixi/AEP/AEPm.md`
-
-`AEPm` https://github.com/minexixi/AEP/blob/73a5343da97e44512bc51dd97b3ecdc565dcc3c7/AEPm.md
-## AEPc
-`AEPc`子协议全称`业余加密协议——证书子协议`，证书对应Certificate。此子协议专门用于传递数字证书。
-
-`AEPc`的详细描述文档见`minexixi/AEP/AEPc.md`
-
-`AEPc` https://github.com/minexixi/AEP/blob/73a5343da97e44512bc51dd97b3ecdc565dcc3c7/AEPc.md
 # 模板
 | 数字 | 说明 | 数字 | 说明 | 数字 | 说明 | 数字 | 说明 |
 |:---:|:---:|:---:|:---:|:---:|:----:|:---:|:---:|
