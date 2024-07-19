@@ -1,18 +1,18 @@
-# 业余加密协议 Amateur Encryption Protocol
-`Amateur Encryption Protocol` is a protocol of amateur radio communication.It's abbreviated as `AEP`.
+# 业余安全协议 Amateur Security Protocol
+`Amateur Security Protocol` is a protocol of amateur radio communication.It's abbreviated as `ASP`.
 
-`业余加密协议`是用于业余无线电通信的协议，英文缩写为`AEP`
+`业余安全协议`是用于业余无线电通信的协议，英文缩写为`ASP`
 
-业余加密协议由此存储库所有者制定，此说明文档和协议具体内容均基于所有者母语`zh-hans-CN`撰写，在转译到其他文字和语言时或会出现若干错误，请以`zh-hans-CN`的内容为准。
+业余安全协议由此存储库所有者制定，此说明文档和协议具体内容均基于所有者母语`zh-hans-CN`撰写，在转译到其他文字和语言时或会出现若干错误，请以`zh-hans-CN`的内容为准。
 
-The Amateur Encryption Protocol is developed by the owner of this repository. This description document and the specific content of the protocol are based on the owner's native language `zh-hans-CN`. Some errors may occur when translating to other written words and languages, whichever is `zh hans-CN`.
+The Amateur Security Protocol is developed by the owner of this repository. This description document and the specific content of the protocol are based on the owner's native language `zh-hans-CN`. Some errors may occur when translating to other written words and languages, whichever is `zh hans-CN`.
 
-由于业余无线电通信有`除业余卫星遥控以外，不得以任何形式对信息进行加密`的要求，所以本协议的“加密”实际上是`发送方使用私钥对信息进行加密，接收方使用发送方的公钥对信息进行解密`。这样就可以实现身份认证，而不违反有关规定。
+由于业余无线电通信有`除业余卫星遥控以外，不得以任何形式对信息进行加密`的要求，所以本协议“安全”的实现实际上是利用`发送方使用私钥对信息进行加密，接收方使用发送方的公钥对信息进行解密`。这样就可以实现身份认证，而不违反有关规定。
 
 # v1.0
-此协议有`AEPp` `AEPC`和`ACSR`两个证书子协议，分别是封包、数字证书和证书请求。
+此协议有`ASPp` `ASPC`和`ACSR`两个证书子协议，分别是封包、数字证书和证书请求。
 
-为保证用户使用`AEP`协议时的安全性和通用性，在此规定有关`AEP`的各种标准，作为应用规范，以避免因标准不一造成的冲突。
+为保证用户使用`ASP`协议时的安全性和通用性，在此规定有关`ASP`的各种标准，作为应用规范，以避免因标准不一造成的冲突。
 
 为防止版本更改过勤，版本分为大版本和小版本两部分，如`v1.0`即第一大版本的初始版本。在应用中只需传输大版本号即可。小版本主要是针对协议规范、标准的增添、删除和修订，对同一大版本兼容，基本不涉及协议的具体定义。
 
