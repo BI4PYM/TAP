@@ -7,7 +7,9 @@
 
 The Amateur Security Protocol is developed by the owner of this repository. This description document and the specific content of the protocol are based on the owner's native language `zh-hans-CN`. Some errors may occur when translating to other written words and languages, whichever is `zh hans-CN`.
 
-ITU对于业余无线电有规定`25.2A	1A)不同国家业余电台之间的传输不应为模糊电文的意思的目的而编码，卫星业余业务中地面控制电台和空间电台之间交换的控制信号除外。（WRC-03）`
+ITU对于业余无线电有规定：
+
+`25.2A	1A)不同国家业余电台之间的传输不应为模糊电文的意思的目的而编码，卫星业余业务中地面控制电台和空间电台之间交换的控制信号除外。（WRC-03）`
 
 所以本协议“安全”的实现实际上是`发送方使用私钥对信息进行加密或签名，接收方可以使用数据帧附带的公钥或数字证书对信息进行解密或验证签名`。这样就可以实现每个接收到此数据帧的用户都能得到信息内容，并实现身份认证，而不违反有关规定。
 
