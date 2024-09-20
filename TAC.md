@@ -1,7 +1,7 @@
-# 业余加密证书 Amateur Encryption Certificate (AEC)
-此子协议描述了业余加密证书`AEC`的内容和使用规范。
+# 可信业余证书 Trusted Amateur Certificate (TAC)
+此子协议描述了业余数字证书`TAC`的内容和使用规范。
 
-This subprotocol describes the content and usage specifications of Amateur Encryption Certificate `AEC'.
+This subprotocol describes the content and usage specifications of Amateur Digital Certificate `TAC'.
 
 采用`TLV`格式描述
 
@@ -23,4 +23,4 @@ This subprotocol describes the content and usage specifications of Amateur Encry
 | 颁发者公钥 | 22 | 不定 | UTF-8 | base64 |
 | 颁发者签名 | 2A | 不定 | UTF-8 | base64 |
 
-对签名的要求请参考`AEP规范:签名规范`
+对签名的要求请参考`TAP规范:签名规范`
