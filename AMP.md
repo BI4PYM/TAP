@@ -53,4 +53,4 @@ date:1674363665630
 
 `{Sender_Address}`为发信人呼号（可选），`{Addressee_Address}`为收信人呼号（可选）；`{Sender_Email_Address}`为发信人邮箱地址（可选），`{Addressee_Email_Address}`为收信人邮箱地址（必选）。
 
-通过SMTP转换到AMP时应将主题`AEP MailRepeat.From {Sender_Address},To {Addressee_Address}:{Addressee_Email_Address}`还有SMTP邮件信息的各项分离开来，添加进AMP邮件中。
+通过SMTP转换到AMP时应将主题`AMP MailRepeat.From {Sender_Address},To {Addressee_Address}:{Addressee_Email_Address}`还有SMTP邮件信息的各项分离开来，添加进AMP邮件中。
