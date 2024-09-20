@@ -1,7 +1,7 @@
-# 业余加密通信——分组子协议 Amateur Encryption Protocol packet-Subprotocol (AEPp)
-`AEPp`是针对于非AX.25协议下直接交换`AEP数据`和其他数据的子协议.
+# 可信业余协议——分组子协议 Trusted Amateur Protocol packet-Subprotocol (TAPp)
+`TAPp`是用于直接交换TAP数据和其他数据的子协议.
 
-`AEPp`是一种分组无线网协议，提供了在不同站点之间有效的交换数据的方法。一次标准的`AEPp通信`应包含`TX``RX`双方，且均能够收发数据。`TX``RX`仅作为`链路发起者``链路确认者`的代称。
+`TAPp`是一种分组无线网协议，提供了在不同站点之间有效交换数据的方法。一次标准的`TAPp通信`应包含`TX``RX`双方，且均能够收发数据。`TX``RX`仅作为`链路发起者``链路确认者`的代称。
 
 ## v1.0
 ### 帧结构
