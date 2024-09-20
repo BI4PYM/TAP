@@ -20,7 +20,7 @@
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | 无目的地址 | 所有人 | 远距,非源地址地区的所有人 | 地区缩写代表地区的所有人 | 紧急呼叫所有人 | 源地址自己 | 自定义组名 |
 
-用户在收到包后检查TLV`0x2C`有无自己的地址，如果有，则认为自己是目的地址，挑选出来并强调显示。一个用户可识别多个地址，如`CQ,ALL,CN,SOS,AEP TEAM`。`DX`地址应判断自己是否属于DX，即`自己地区`不等于`源地址地区`。
+用户在收到包后检查TLV`0x2C`有无自己的地址，如果有，则认为自己是目的地址，挑选出来并强调显示。一个用户可识别多个地址，如`CQ,ALL,CN,SOS,AEP_TEAM`。`DX`地址应判断自己是否属于DX，即`自己地区`不等于`源地址地区`。
 
 如果需要中继，应在目的地址后加中继地址，最后加TLV`0x2E`，标注最大转发次数。可加入多个中继地址，转发次数应是中继数。
 
@@ -29,13 +29,13 @@
 |:----:|:----:|:----:|:----:|:----:|
 | 无目的中继 | 所有中继 | 所有人和中继 | 支持电子邮件的人和中继 | 通过用户转发 |
 
-其中的`MAILREP`在使用时源地址应包含发信人电子邮箱地址，目的地址包含收信人电子邮箱地址。在转发时应当由转发者自己的电子邮箱发送，主题为`TAP MailRepeat.From {Sender_Address}:{Sender_Email_Address},To {Addressee_Email_Address}`，内容为整个原始帧的base64编码。
+其中的`MAILREP`在使用时源地址应包含发信人电子邮箱地址，目的地址包含收信人电子邮箱地址。在转发时应当由转发者自己的电子邮箱发送，主题为`AMP MailRepeat.From {Sender_Address}:{Sender_Email_Address},To {Addressee_Email_Address}`，内容为整个原始帧的base64编码。
 
 源地址和目的地址若为电子邮箱地址，应添加前缀`F2`以区分。
 
 `{Sender_Address}`为发信人呼号，`{Addressee_Address}`为收信人呼号；`{Sender_Email_Address}`为发信人邮箱地址，`{Addressee_Email_Address}`为收信人邮箱地址。
 
-通过无线电传输电子邮件时应将邮件正文base64解密后的数据作为数据帧主体，将发信邮箱地址和自己中继地址（前缀`0xF4`）写入源地址中，将主题`TAP MailRepeater.From {Sender_Address},To {Addressee_Address}:{Addressee_Email_Address}`中的`{Sender_Address}`添加进源地址中,`{Addressee_Email_Address}`和`{Addressee_Address}`加入目的地址中。
+通过无线电传输电子邮件时应将邮件正文base64解密后的数据作为数据帧主体，将发信邮箱地址和自己中继地址（前缀`0xF4`）写入源地址中，将主题`AMP MailRepeater.From {Sender_Address},To {Addressee_Address}:{Addressee_Email_Address}`中的`{Sender_Address}`添加进源地址中,`{Addressee_Email_Address}`和`{Addressee_Address}`加入目的地址中。
 
 中继和用户在收到帧后检查TLV`0x2D`有无自己的地址，如果有，则将TLV`0x2E`的值减1，在自己中继地址的标签前加上前缀`0xF4`，在自己中继地址值的末尾加上`0x5E ^`，后附TLV`0x2E`的十进制UTF-8值（如原始包`0x2D0170 "p" 2E0102`，处理后为`0xF42D03705E31 "p^1" 0x2E0101`），重新校验后转发；若TLV`0x2E`的原始值为0，则不转发。
 
