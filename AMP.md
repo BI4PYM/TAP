@@ -37,19 +37,19 @@ date:1674363665630
 
 插入附件格式：
 ```
-<file id="1"><MIME="type/subtype"><filename="a.txt"><filesize="12B"> '以字节为单位，不足一字节补齐一字节
-<file_UUID="680ca564-9f60-90b5-c4e0-d3460dba5d51"></file>
+<file id="1"><MIME>type/subtype</MIME><filename>a.txt"</filename><filesize>12</filesize> '以字节为单位，不足一字节补齐一字节
+<file_UUID>680ca564-9f60-90b5-c4e0-d3460dba5d51</file_UUID></file>
 ```
 在邮件末尾：
 ```
 <file uuid="680ca564-9f60-90b5-c4e0-d3460dba5d51">
-<file_DATA="base64编码的文件数据"></file>
+<file_DATA>base64编码的文件数据</file_DATA></file>
 ```
 `MIME类型表`参照https://www.iana.org/assignments/media-types/media-types.xhtml
 ### 邮箱地址
 在使用无线电传输邮件时，邮箱地址为`callsign@radio`
 ### 协议转换
-在AMP转换到SMTP时应当由转发者自己的电子邮箱发送，主题为`AMP MailRepeater.From {Sender_Address}:{Sender_Email_Address},To {Addressee_Email_Address}`，正文为邮件原始数据（非base64）。
+在AMP转换到SMTP时应当由转发者自己的电子邮箱发送，主题为`AMP MailRepeater.From {Sender_Address}:{Sender_Email_Address},To {Addressee_Email_Address}`，正文为邮件原始数据文本（非base64）。
 
 `{Sender_Address}`为发信人呼号（可选），`{Addressee_Address}`为收信人呼号（可选）；`{Sender_Email_Address}`为发信人邮箱地址（可选），`{Addressee_Email_Address}`为收信人邮箱地址（必选）。
 
