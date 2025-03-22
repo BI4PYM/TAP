@@ -1,8 +1,8 @@
-# 业余邮件协议 Amateur Mail Protocal (AMP)
-`业余邮件协议`是`TEP`体系下用于业余无线电传输电子邮件的通信协议，也可独立于`TEP`存在。
+# 可信邮件协议 Trusted Mail Protocal (TMP)
+`可信邮件协议`是`TEP`体系下用于业余无线电传输电子邮件的通信协议，也可独立于`TEP`存在。
 
 ## v1.0
-`业余邮件协议`是应用层协议，一封邮件由邮件头和邮件体两部分组成，文字均使用`UTF-8`编码。
+`可信邮件协议`是应用层协议，一封邮件由邮件头和邮件体两部分组成，文字均使用`UTF-8`编码。
 ### 邮件格式（XML）
 ```
 <mail>
@@ -49,8 +49,8 @@ date:1674363665630
 ### 邮箱地址
 在使用无线电传输邮件时，邮箱地址为`callsign@radio`
 ### 协议转换
-在AMP转换到SMTP时应当由转发者自己的电子邮箱发送，主题为`AMP MailRepeater.From {Sender_Address}:{Sender_Email_Address},To {Addressee_Email_Address}`，正文为邮件原始数据文本（非base64）。
+在TMP转换到SMTP时应当由转发者自己的电子邮箱发送，主题为`TMP MailRepeater.From {Sender_Address}:{Sender_Email_Address},To {Addressee_Email_Address}`，正文为邮件原始数据文本（非base64）。
 
 `{Sender_Address}`为发信人呼号（可选），`{Addressee_Address}`为收信人呼号（可选）；`{Sender_Email_Address}`为发信人邮箱地址（可选），`{Addressee_Email_Address}`为收信人邮箱地址（必选）。
 
-通过SMTP转换到AMP时应将主题`AMP MailRepeat.From {Sender_Address},To {Addressee_Address}:{Addressee_Email_Address}`还有SMTP邮件信息的各项分离开来，添加进AMP邮件中。
+通过SMTP转换到TMP时应将主题`TMP MailRepeat.From {Sender_Address},To {Addressee_Address}:{Addressee_Email_Address}`还有SMTP邮件信息的各项分离开来，添加进TMP邮件中。
