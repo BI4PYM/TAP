@@ -1,32 +1,34 @@
-# 可信业余协议 Trusted Amateur Protocol
-`Trusted Amateur Protocol` is a protocol of amateur radio communication.It's abbreviated as `TAP`.
+# 高速可信协议 Trusted Express Protocol
+`Trusted Express Protocol` is a protocol of radio communication.It's abbreviated as `TEP`.
 
-`可信业余协议`是用于业余无线电通信的协议，英文缩写为`TAP`
+`高速可信协议`是一种无线电通信协议，英文缩写为`TEP`
 
-业余安全协议由此存储库所有者制定，此说明文档和协议具体内容均基于所有者母语`zh-hans-CN`撰写，在转译到其他文字和语言时或会出现若干错误，请以`zh-hans-CN`的内容为准。
+高速可信协议由此存储库所有者制定，此说明文档和协议具体内容均基于所有者母语`zh-hans-CN`撰写，在转译到其他文字和语言时或会出现若干错误，请以`zh-hans-CN`的内容为准。
 
-The Trusted Amateur Protocol is developed by the owner of this repository. This description document and the specific content of the protocol are based on the owner's native language `zh-hans-CN`. Some errors may occur when translating to other written words and languages, whichever is `zh hans-CN`.
+The Trusted Express Protocol is developed by the owner of this repository. This description document and the specific content of the protocol are based on the owner's native language `zh-hans-CN`. Some errors may occur when translating to other written words and languages, whichever is `zh hans-CN`.
+
+业余无线电操作者注意
 
 ITU对于业余无线电有规定：
 
 `25.2A	1A)不同国家业余电台之间的传输不应为模糊电文的意思的目的而编码，卫星业余业务中地面控制电台和空间电台之间交换的控制信号除外。（WRC-03）`
 
-所以本协议“安全”的实现实际上是`发送方使用私钥对信息进行加密或签名，接收方可以使用数据帧附带的公钥或数字证书对信息进行解密或验证签名`。这样就可以实现每个接收到此数据帧的用户都能得到信息内容，并实现身份认证，而不违反有关规定。
+业余无线电在应用本协议时应当避免对信息的直接加密，应当使用数据签名实现数据可信。
 
-# 为什么选择TAP？
+# 为什么选择TEP？
 
-TAP使用不对称加密算法，拥有鉴权功能，可以保证消息来源真实可靠，不被冒用呼号。
+TEP使用不对称加密算法，拥有鉴权功能，可以保证消息来源真实可靠，不被冒用身份。
 
-TAP数据结构的核心是TLV格式，使得TAP十分灵活高效，可以轻松容纳任何类型和大小的数据。
+TEP数据结构的核心是TLV格式，使得TEP十分灵活高效，可以轻松容纳任何类型和大小的数据。
 
-TAP通过使用长短帧、前向纠错和交织，可以适应低信噪比与突发干扰的恶劣环境。
+TEP通过使用长短帧、前向纠错和交织，可以适应低信噪比与突发干扰的恶劣环境。
 
-TAP协议文档完全免费、公开，任何人都可以免费利用TAP协议进行通信（如果你使用的TAP调制解调器是免费的）。
+TEP协议文档完全免费、公开，任何人都可以免费利用TEP协议进行通信（如果你使用的TEP调制解调器是免费的）。
 
 # v1.0
-此协议有`TAPp` `TAPC`和`ACSR`两个证书子协议，分别是封包通信、数字证书和证书请求。
+此协议有`TEPp` `TEPC`和`TCSR`三个子协议，分别是封包通信、数字证书和证书请求。
 
-为保证用户使用`TAP`协议时的安全性和通用性，在此规定有关`TAP`的各种标准，作为应用规范，以避免因标准不一造成的冲突。
+为保证用户使用`TEP`协议时的安全性和通用性，在此规定有关`TEP`的各种标准，作为应用规范，以避免因标准不一造成的冲突。
 
 为防止版本更改过勤，版本分为大版本和小版本两部分，如`v1.0`即第一大版本的初始版本。在应用中只需传输大版本号即可。小版本主要是针对协议规范、标准的增添、删除和修订，对同一大版本兼容，基本不涉及协议的具体定义。
 
